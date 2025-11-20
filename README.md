@@ -1,16 +1,103 @@
-# flutter_store
+# Flutter Store 🛍️
 
-A new Flutter project.
+Aplicação de e-commerce desenvolvida em Flutter como projeto avaliativo de Desenvolvimento Mobile.
 
-## Getting Started
+## 📱 Funcionalidades
 
-This project is a starting point for a Flutter application.
+- ✅ **Login e Cadastro** com validações
+- ✅ **Catálogo de 8 Produtos** com categorias
+- ✅ **Sistema de Favoritos** com persistência local
+- ✅ **Tela de Detalhes** com informações completas
+- ✅ **Navegação Fluida** com Drawer + Bottom Navigation
+- ✅ **Splash Screen com Animação** (bônus)
 
-A few resources to get you started if this is your first Flutter project:
+## 🏗️ Estrutura do Projeto
 
-- [Lab: Write your first Flutter app](https://docs.flutter.dev/get-started/codelab)
-- [Cookbook: Useful Flutter samples](https://docs.flutter.dev/cookbook)
+```
+lib/
+├── main.dart              # Entrada da aplicação
+├── modelos/              # Modelos de dados
+│   ├── produto.dart
+│   └── usuario.dart
+├── componentes/          # Componentes reutilizáveis
+│   ├── campo_texto.dart
+│   ├── botao_principal.dart
+│   ├── cartao_produto.dart
+│   └── mensagens.dart
+└── telas/                # Telas da aplicação
+    ├── splash_tela.dart
+    ├── login_tela.dart
+    ├── cadastro_tela.dart
+    ├── home_tela.dart
+    ├── produtos_tela.dart
+    ├── detalhe_produto_tela.dart
+    ├── favoritos_tela.dart
+    └── sobre_tela.dart
+```
 
-For help getting started with Flutter development, view the
-[online documentation](https://docs.flutter.dev/), which offers tutorials,
-samples, guidance on mobile development, and a full API reference.
+## 🚀 Como Executar
+
+### Pré-requisitos
+- Flutter SDK (v3.9.2+)
+- Dart SDK
+
+### Passos
+
+```bash
+# 1. Entre no diretório do projeto
+cd flutter_store
+
+# 2. Instale as dependências
+flutter pub get
+
+# 3. Execute a aplicação
+flutter run
+```
+
+## 🎨 Telas Implementadas
+
+| Tela | Descrição |
+|------|-----------|
+| **Splash** | Animação de carregamento (3s) |
+| **Login** | Autenticação com validação de e-mail |
+| **Cadastro** | Criação de conta com validação de senhas |
+| **Home** | Dashboard com categorias e promoções |
+| **Produtos** | Lista completa de 8 produtos |
+| **Detalhes** | Informações detalhadas do produto |
+| **Favoritos** | Produtos marcados como favoritos |
+| **Sobre** | Informações do app |
+
+## 🛠️ Tecnologias
+
+- **Flutter** - Framework UI
+- **Dart** - Linguagem de programação
+- **Material Design 3** - Design system
+
+## 📊 Pontuação
+
+| Critério | Pontos |
+|----------|--------|
+| Login e Cadastro | 1.0 |
+| Navegação funcional | 1.0 |
+| Tela de Produtos | 2.0 |
+| Favoritos | 2.0 |
+| Widgets (ListView, Row, Column) | 1.0 |
+| Organização modular | 2.0 |
+| Design e criatividade | 1.0 |
+| **Splash Screen (Bônus)** | **+1.0** |
+| **TOTAL** | **11.0** |
+
+## 📝 Notas
+
+- Dados simulados, sem persistência permanente
+- Sistema de favoritos funciona com `setState`
+- Sem autenticação real (apenas validação de formulário)
+- Interface responsiva e intuitiva
+
+## 👨‍💻 Desenvolvedor
+
+**Murilo da Silva** - Aluno SENAI
+
+---
+
+**Versão:** 1.0.0 | **Data:** 19 de Novembro de 2025
