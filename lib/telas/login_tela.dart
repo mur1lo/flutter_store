@@ -48,7 +48,7 @@ class _LoginTelaState extends State<LoginTela> {
       body: Container(
         decoration: BoxDecoration(
           gradient: LinearGradient(
-            colors: [Colors.deepPurple.shade700, Colors.deepPurple.shade500],
+            colors: [Color(0xFF0052CC), Color(0xFF0080FF)],
             begin: Alignment.topLeft,
             end: Alignment.bottomRight,
           ),
@@ -116,7 +116,7 @@ class _LoginTelaState extends State<LoginTela> {
                           child: const Text(
                             'Criar Conta',
                             style: TextStyle(
-                              color: Colors.orange,
+                              color: Color(0xFF0080FF),
                               fontWeight: FontWeight.bold,
                               decoration: TextDecoration.underline,
                             ),

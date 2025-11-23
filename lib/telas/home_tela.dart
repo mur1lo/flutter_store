@@ -50,7 +50,7 @@ class _HomeTelaState extends State<HomeTela> {
             padding: const EdgeInsets.all(20),
             decoration: BoxDecoration(
               gradient: LinearGradient(
-                colors: [Colors.deepPurple.shade700, Colors.deepPurple.shade500],
+                colors: [Color(0xFF0052CC), Color(0xFF0080FF)],
                 begin: Alignment.topLeft,
                 end: Alignment.bottomRight,
               ),
@@ -111,12 +111,12 @@ class _HomeTelaState extends State<HomeTela> {
                 Container(
                   padding: const EdgeInsets.all(15),
                   decoration: BoxDecoration(
-                    color: Colors.orange.shade100,
+                    color: Color(0xFF0080FF).withValues(alpha: 0.1),
                     borderRadius: BorderRadius.circular(10),
                   ),
                   child: Row(
                     children: [
-                      const Icon(Icons.local_offer, color: Colors.orange, size: 30),
+                      const Icon(Icons.local_offer, color: Color(0xFF0080FF), size: 30),
                       const SizedBox(width: 15),
                       Expanded(
                         child: Column(
@@ -152,13 +152,13 @@ class _HomeTelaState extends State<HomeTela> {
       margin: const EdgeInsets.only(right: 15),
       width: 90,
       decoration: BoxDecoration(
-        color: Colors.deepPurple.shade100,
+        color: Color(0xFF0052CC).withValues(alpha: 0.1),
         borderRadius: BorderRadius.circular(10),
       ),
       child: Column(
         mainAxisAlignment: MainAxisAlignment.center,
         children: [
-          Icon(icone, size: 40, color: Colors.deepPurple),
+          Icon(icone, size: 40, color: Color(0xFF0052CC)),
           const SizedBox(height: 8),
           Text(
             titulo,
@@ -186,7 +186,7 @@ class _HomeTelaState extends State<HomeTela> {
       child: Scaffold(
         appBar: AppBar(
           title: const Text('Flutter Store'),
-          backgroundColor: Colors.deepPurple,
+          backgroundColor: const Color(0xFF0052CC),
           elevation: 0,
           automaticallyImplyLeading: false,
         ),
@@ -197,7 +197,7 @@ class _HomeTelaState extends State<HomeTela> {
               DrawerHeader(
                 decoration: BoxDecoration(
                   gradient: LinearGradient(
-                    colors: [Colors.deepPurple.shade700, Colors.deepPurple.shade500],
+                    colors: [Color(0xFF0052CC), Color(0xFF0080FF)],
                     begin: Alignment.topLeft,
                     end: Alignment.bottomRight,
                   ),
@@ -208,7 +208,7 @@ class _HomeTelaState extends State<HomeTela> {
                   children: [
                     CircleAvatar(
                       backgroundColor: Colors.white,
-                      child: Icon(Icons.person, color: Colors.deepPurple, size: 30),
+                      child: Icon(Icons.person, color: Color(0xFF0052CC), size: 30),
                     ),
                     const SizedBox(height: 10),
                     Text(
@@ -272,7 +272,7 @@ class _HomeTelaState extends State<HomeTela> {
         bottomNavigationBar: BottomNavigationBar(
           type: BottomNavigationBarType.fixed,
           currentIndex: _indiceAbaSelecionada,
-          selectedItemColor: Colors.deepPurple,
+          selectedItemColor: const Color(0xFF0052CC),
           unselectedItemColor: Colors.grey,
           onTap: _aoAlternaTela,
           items: const [

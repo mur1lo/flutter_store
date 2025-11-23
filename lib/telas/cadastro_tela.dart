@@ -67,7 +67,7 @@ class _CadastroTelaState extends State<CadastroTela> {
       body: Container(
         decoration: BoxDecoration(
           gradient: LinearGradient(
-            colors: [Colors.deepPurple.shade700, Colors.deepPurple.shade500],
+            colors: [Color(0xFF0052CC), Color(0xFF0080FF)],
             begin: Alignment.topLeft,
             end: Alignment.bottomRight,
           ),
@@ -141,7 +141,7 @@ class _CadastroTelaState extends State<CadastroTela> {
                       child: const Text(
                         'Voltar ao Login',
                         style: TextStyle(
-                          color: Colors.orange,
+                          color: Color(0xFF0080FF),
                           fontWeight: FontWeight.bold,
                           decoration: TextDecoration.underline,
                         ),

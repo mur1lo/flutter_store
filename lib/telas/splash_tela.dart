@@ -54,7 +54,7 @@ class _SplashTelaState extends State<SplashTela>
       body: Container(
         decoration: BoxDecoration(
           gradient: LinearGradient(
-            colors: [Colors.deepPurple.shade700, Colors.deepPurple.shade500],
+            colors: [Color(0xFF0052CC), Color(0xFF0080FF)],
             begin: Alignment.topLeft,
             end: Alignment.bottomRight,
           ),
@@ -91,7 +91,7 @@ class _SplashTelaState extends State<SplashTela>
               FadeTransition(
                 opacity: _desvaneceAnimacao,
                 child: const CircularProgressIndicator(
-                  valueColor: AlwaysStoppedAnimation<Color>(Colors.orange),
+                  valueColor: AlwaysStoppedAnimation<Color>(Color(0xFF0080FF)),
                 ),
               ),
             ],

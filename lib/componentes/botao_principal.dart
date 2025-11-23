@@ -10,7 +10,7 @@ class BotaoPrincipal extends StatelessWidget {
     super.key,
     required this.texto,
     required this.aoClicar,
-    this.fundo = Colors.orange,
+    this.fundo = Colors.blue,
     this.textoCor = Colors.white,
   });
 

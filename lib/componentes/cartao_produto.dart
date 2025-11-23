@@ -75,7 +75,7 @@ class CartaoProduto extends StatelessWidget {
                       style: const TextStyle(
                         fontSize: 16,
                         fontWeight: FontWeight.bold,
-                        color: Colors.deepPurple,
+                        color: Color(0xFF0052CC),
                       ),
                     ),
                   ],

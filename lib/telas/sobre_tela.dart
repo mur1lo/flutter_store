@@ -9,7 +9,7 @@ class SobreTela extends StatelessWidget {
       child: Container(
         decoration: BoxDecoration(
           gradient: LinearGradient(
-            colors: [Colors.deepPurple.shade700, Colors.deepPurple.shade500],
+            colors: [Color(0xFF0052CC), Color(0xFF0080FF)],
             begin: Alignment.topLeft,
             end: Alignment.bottomRight,
           ),
@@ -62,7 +62,7 @@ class SobreTela extends StatelessWidget {
                       style: TextStyle(
                         fontSize: 20,
                         fontWeight: FontWeight.bold,
-                        color: Colors.deepPurple,
+                        color: Color(0xFF0052CC),
                       ),
                     ),
                     const SizedBox(height: 15),
@@ -80,7 +80,7 @@ class SobreTela extends StatelessWidget {
                       style: TextStyle(
                         fontSize: 18,
                         fontWeight: FontWeight.bold,
-                        color: Colors.deepPurple,
+                        color: Color(0xFF0052CC),
                       ),
                     ),
                     const SizedBox(height: 15),
@@ -104,7 +104,7 @@ class SobreTela extends StatelessWidget {
       padding: const EdgeInsets.only(bottom: 12),
       child: Row(
         children: [
-          Icon(icone, color: Colors.deepPurple, size: 24),
+          Icon(icone, color: Color(0xFF0052CC), size: 24),
           const SizedBox(width: 15),
           Text(
             texto,

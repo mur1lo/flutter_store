@@ -32,7 +32,7 @@ class _DetalheProdutoTelaState extends State<DetalheProdutoTela> {
     return Scaffold(
       appBar: AppBar(
         title: const Text('Detalhes do Produto'),
-        backgroundColor: Colors.deepPurple,
+        backgroundColor: const Color(0xFF0052CC),
         elevation: 0,
       ),
       body: SingleChildScrollView(
@@ -78,13 +78,13 @@ class _DetalheProdutoTelaState extends State<DetalheProdutoTela> {
                                 vertical: 6,
                               ),
                               decoration: BoxDecoration(
-                                color: Colors.deepPurple.shade100,
+                                color: Color(0xFF0052CC).withValues(alpha: 0.1),
                                 borderRadius: BorderRadius.circular(20),
                               ),
                               child: Text(
                                 widget.produto.categoria,
                                 style: TextStyle(
-                                  color: Colors.deepPurple,
+                                  color: Color(0xFF0052CC),
                                   fontWeight: FontWeight.bold,
                                   fontSize: 12,
                                 ),
@@ -112,7 +112,7 @@ class _DetalheProdutoTelaState extends State<DetalheProdutoTela> {
                   Container(
                     padding: const EdgeInsets.all(15),
                     decoration: BoxDecoration(
-                      color: Colors.orange.shade100,
+                      color: Color(0xFF0052CC).withValues(alpha: 0.1),
                       borderRadius: BorderRadius.circular(10),
                     ),
                     child: Row(
@@ -122,7 +122,7 @@ class _DetalheProdutoTelaState extends State<DetalheProdutoTela> {
                           style: const TextStyle(
                             fontSize: 28,
                             fontWeight: FontWeight.bold,
-                            color: Colors.deepPurple,
+                            color: Color(0xFF0052CC),
                           ),
                         ),
                       ],
@@ -167,7 +167,7 @@ class _DetalheProdutoTelaState extends State<DetalheProdutoTela> {
                         Navigator.of(context).pop();
                       },
                       style: OutlinedButton.styleFrom(
-                        side: const BorderSide(color: Colors.deepPurple),
+                        side: const BorderSide(color: Color(0xFF0052CC)),
                         shape: RoundedRectangleBorder(
                           borderRadius: BorderRadius.circular(10),
                         ),
@@ -177,7 +177,7 @@ class _DetalheProdutoTelaState extends State<DetalheProdutoTela> {
                         style: TextStyle(
                           fontSize: 16,
                           fontWeight: FontWeight.bold,
-                          color: Colors.deepPurple,
+                          color: Color(0xFF0052CC),
                         ),
                       ),
                     ),
