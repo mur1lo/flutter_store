@@ -72,6 +72,7 @@ flutter run
 - **Flutter** - Framework UI
 - **Dart** - Linguagem de programação
 - **Material Design 3** - Design system
+- **Cores SENAI SC** - Azul (#0052CC) e Branco
 
 ## 📊 Pontuação
 
