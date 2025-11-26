@@ -141,9 +141,10 @@ class _CadastroTelaState extends State<CadastroTela> {
                       child: const Text(
                         'Voltar ao Login',
                         style: TextStyle(
-                          color: Color(0xFF0080FF),
+                          color: Colors.white,
                           fontWeight: FontWeight.bold,
                           decoration: TextDecoration.underline,
+                          decorationColor: Colors.white,
                         ),
                       ),
                     ),

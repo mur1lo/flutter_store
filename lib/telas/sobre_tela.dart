@@ -67,7 +67,7 @@ class SobreTela extends StatelessWidget {
                     ),
                     const SizedBox(height: 15),
                     const Text(
-                      'App de e-commerce desenvolvido em Flutter para demonstrar boas práticas de desenvolvimento mobile.',
+                      'App de e-commerce desenvolvido em Flutter para demonstrar boas práticas de desenvolvimento mobile. \nEquipe: Eliza, Giula, Murilo e Rafael',
                       style: TextStyle(
                         fontSize: 14,
                         height: 1.6,

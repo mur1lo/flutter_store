@@ -16,29 +16,11 @@ class HomeTela extends StatefulWidget {
 class _HomeTelaState extends State<HomeTela> {
   int _indiceAbaSelecionada = 0;
   final List<int> _favoritos = [];
-
-  late List<Widget> _paginas;
+  String _categoriaSelecionada = '';
 
   @override
   void initState() {
     super.initState();
-    _paginas = [
-      _construirHome(),
-      ProdutosTela(
-        favoritos: _favoritos,
-        aoAlternarFavorito: (idProduto) {
-          setState(() {
-            if (_favoritos.contains(idProduto)) {
-              _favoritos.remove(idProduto);
-            } else {
-              _favoritos.add(idProduto);
-            }
-          });
-        },
-      ),
-      FavoritosTela(idsDosFavoritos: _favoritos),
-      const SobreTela(),
-    ];
   }
 
   Widget _construirHome() {
@@ -57,11 +39,7 @@ class _HomeTelaState extends State<HomeTela> {
             ),
             child: Column(
               children: [
-                Icon(
-                  Icons.shopping_bag,
-                  size: 80,
-                  color: Colors.white,
-                ),
+                Icon(Icons.shopping_bag, size: 80, color: Colors.white),
                 const SizedBox(height: 20),
                 Text(
                   'Bem-vindo, ${widget.nomUsuario}!',
@@ -74,10 +52,7 @@ class _HomeTelaState extends State<HomeTela> {
                 const SizedBox(height: 10),
                 const Text(
                   'Aproveite as melhores ofertas',
-                  style: TextStyle(
-                    fontSize: 16,
-                    color: Colors.white70,
-                  ),
+                  style: TextStyle(fontSize: 16, color: Colors.white70),
                 ),
               ],
             ),
@@ -89,10 +64,7 @@ class _HomeTelaState extends State<HomeTela> {
               children: [
                 const Text(
                   'Categorias',
-                  style: TextStyle(
-                    fontSize: 20,
-                    fontWeight: FontWeight.bold,
-                  ),
+                  style: TextStyle(fontSize: 20, fontWeight: FontWeight.bold),
                 ),
                 const SizedBox(height: 15),
                 SizedBox(
@@ -111,12 +83,16 @@ class _HomeTelaState extends State<HomeTela> {
                 Container(
                   padding: const EdgeInsets.all(15),
                   decoration: BoxDecoration(
-                    color: Color(0xFF0080FF).withValues(alpha: 0.1),
+                    color: Colors.orange.shade100,
                     borderRadius: BorderRadius.circular(10),
                   ),
                   child: Row(
                     children: [
-                      const Icon(Icons.local_offer, color: Color(0xFF0080FF), size: 30),
+                      const Icon(
+                        Icons.local_offer,
+                        color: Colors.orange,
+                        size: 30,
+                      ),
                       const SizedBox(width: 15),
                       Expanded(
                         child: Column(
@@ -148,27 +124,32 @@ class _HomeTelaState extends State<HomeTela> {
   }
 
   Widget _cartaoCategoria(String titulo, IconData icone) {
-    return Container(
-      margin: const EdgeInsets.only(right: 15),
-      width: 90,
-      decoration: BoxDecoration(
-        color: Color(0xFF0052CC).withValues(alpha: 0.1),
-        borderRadius: BorderRadius.circular(10),
-      ),
-      child: Column(
-        mainAxisAlignment: MainAxisAlignment.center,
-        children: [
-          Icon(icone, size: 40, color: Color(0xFF0052CC)),
-          const SizedBox(height: 8),
-          Text(
-            titulo,
-            textAlign: TextAlign.center,
-            style: const TextStyle(
-              fontSize: 12,
-              fontWeight: FontWeight.bold,
+    return InkWell(
+      onTap: () {
+        setState(() {
+          _categoriaSelecionada = titulo;
+          _indiceAbaSelecionada = 1;
+        });
+      },
+      child: Container(
+        margin: const EdgeInsets.only(right: 15),
+        width: 90,
+        decoration: BoxDecoration(
+          color: Colors.deepPurple.shade100,
+          borderRadius: BorderRadius.circular(10),
+        ),
+        child: Column(
+          mainAxisAlignment: MainAxisAlignment.center,
+          children: [
+            Icon(icone, size: 40, color: Colors.deepPurple),
+            const SizedBox(height: 8),
+            Text(
+              titulo,
+              textAlign: TextAlign.center,
+              style: const TextStyle(fontSize: 12, fontWeight: FontWeight.bold),
             ),
-          ),
-        ],
+          ],
+        ),
       ),
     );
   }
@@ -176,11 +157,33 @@ class _HomeTelaState extends State<HomeTela> {
   void _aoAlternaTela(int indice) {
     setState(() {
       _indiceAbaSelecionada = indice;
+      if (indice != 1) {
+        _categoriaSelecionada = '';
+      }
     });
   }
 
   @override
   Widget build(BuildContext context) {
+    final List<Widget> _paginas = [
+      _construirHome(),
+      ProdutosTela(
+        favoritos: _favoritos,
+        categoriaSelecionada: _categoriaSelecionada,
+        aoAlternarFavorito: (idProduto) {
+          setState(() {
+            if (_favoritos.contains(idProduto)) {
+              _favoritos.remove(idProduto);
+            } else {
+              _favoritos.add(idProduto);
+            }
+          });
+        },
+      ),
+      FavoritosTela(idsDosFavoritos: _favoritos),
+      const SobreTela(),
+    ];
+
     return PopScope(
       canPop: false,
       child: Scaffold(
@@ -189,6 +192,17 @@ class _HomeTelaState extends State<HomeTela> {
           backgroundColor: const Color(0xFF0052CC),
           elevation: 0,
           automaticallyImplyLeading: false,
+          actions: [
+            IconButton(
+              icon: const Icon(Icons.logout),
+              onPressed: () {
+                Navigator.of(context).pushAndRemoveUntil(
+                  MaterialPageRoute(builder: (_) => const LoginTela()),
+                  (route) => false,
+                );
+              },
+            ),
+          ],
         ),
         drawer: Drawer(
           child: ListView(
@@ -208,7 +222,11 @@ class _HomeTelaState extends State<HomeTela> {
                   children: [
                     CircleAvatar(
                       backgroundColor: Colors.white,
-                      child: Icon(Icons.person, color: Color(0xFF0052CC), size: 30),
+                      child: Icon(
+                        Icons.person,
+                        color: Colors.deepPurple,
+                        size: 30,
+                      ),
                     ),
                     const SizedBox(height: 10),
                     Text(
@@ -276,10 +294,7 @@ class _HomeTelaState extends State<HomeTela> {
           unselectedItemColor: Colors.grey,
           onTap: _aoAlternaTela,
           items: const [
-            BottomNavigationBarItem(
-              icon: Icon(Icons.home),
-              label: 'Início',
-            ),
+            BottomNavigationBarItem(icon: Icon(Icons.home), label: 'Início'),
             BottomNavigationBarItem(
               icon: Icon(Icons.shopping_bag),
               label: 'Produtos',
@@ -288,10 +303,7 @@ class _HomeTelaState extends State<HomeTela> {
               icon: Icon(Icons.favorite),
               label: 'Favoritos',
             ),
-            BottomNavigationBarItem(
-              icon: Icon(Icons.info),
-              label: 'Sobre',
-            ),
+            BottomNavigationBarItem(icon: Icon(Icons.info), label: 'Sobre'),
           ],
         ),
       ),

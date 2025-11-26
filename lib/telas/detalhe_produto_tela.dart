@@ -41,9 +41,7 @@ class _DetalheProdutoTelaState extends State<DetalheProdutoTela> {
             Container(
               width: double.infinity,
               height: 300,
-              decoration: BoxDecoration(
-                color: Colors.grey.shade200,
-              ),
+              decoration: BoxDecoration(color: Colors.grey.shade200),
               child: Center(
                 child: Icon(
                   Icons.shopping_bag,
@@ -131,18 +129,12 @@ class _DetalheProdutoTelaState extends State<DetalheProdutoTela> {
                   const SizedBox(height: 20),
                   const Text(
                     'Descrição',
-                    style: TextStyle(
-                      fontSize: 18,
-                      fontWeight: FontWeight.bold,
-                    ),
+                    style: TextStyle(fontSize: 18, fontWeight: FontWeight.bold),
                   ),
                   const SizedBox(height: 10),
                   Text(
                     widget.produto.descricao,
-                    style: const TextStyle(
-                      fontSize: 16,
-                      height: 1.5,
-                    ),
+                    style: const TextStyle(fontSize: 16, height: 1.5),
                   ),
                   const SizedBox(height: 30),
                   BotaoPrincipal(

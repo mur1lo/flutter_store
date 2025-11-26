@@ -53,81 +53,78 @@ class _LoginTelaState extends State<LoginTela> {
             end: Alignment.bottomRight,
           ),
         ),
-        child: SingleChildScrollView(
-          child: Column(
-            children: [
-              SizedBox(height: MediaQuery.of(context).size.height * 0.1),
-              Center(
-                child: Icon(
-                  Icons.shopping_bag,
-                  size: 80,
-                  color: Colors.white,
-                ),
-              ),
-              const SizedBox(height: 20),
-              const Text(
-                'Flutter Store',
-                style: TextStyle(
-                  fontSize: 32,
-                  fontWeight: FontWeight.bold,
-                  color: Colors.white,
-                ),
-              ),
-              const SizedBox(height: 40),
-              Padding(
-                padding: const EdgeInsets.symmetric(horizontal: 30),
-                child: Column(
-                  children: [
-                    CampoTexto(
-                      controller: _emailController,
-                      dica: 'E-mail',
-                      icone: Icons.email,
-                      tipoTeclado: TextInputType.emailAddress,
+        child: Center(
+          child: SingleChildScrollView(
+            child: Padding(
+              padding: const EdgeInsets.symmetric(horizontal: 30),
+              child: Column(
+                mainAxisAlignment: MainAxisAlignment.center,
+                children: [
+                  Icon(
+                    Icons.shopping_bag,
+                    size: 80,
+                    color: Colors.white,
+                  ),
+                  const SizedBox(height: 20),
+                  const Text(
+                    'Flutter Store',
+                    style: TextStyle(
+                      fontSize: 32,
+                      fontWeight: FontWeight.bold,
+                      color: Colors.white,
                     ),
-                    const SizedBox(height: 20),
-                    CampoTexto(
-                      controller: _senhaController,
-                      dica: 'Senha',
-                      icone: Icons.lock,
-                      obscureText: true,
-                    ),
-                    const SizedBox(height: 20),
-                    if (_mensagemErro.isNotEmpty)
-                      MensagemErro(mensagem: _mensagemErro),
-                    const SizedBox(height: 30),
-                    BotaoPrincipal(
-                      texto: 'Entrar',
-                      aoClicar: _entrar,
-                    ),
-                    const SizedBox(height: 20),
-                    Row(
-                      mainAxisAlignment: MainAxisAlignment.center,
-                      children: [
-                        const Text(
-                          'Não tem conta? ',
-                          style: TextStyle(color: Colors.white),
-                        ),
-                        GestureDetector(
-                          onTap: () {
-                            Navigator.of(context).push(
-                              MaterialPageRoute(builder: (_) => const CadastroTela()),
-                            );
-                          },
-                          child: const Text(
-                            'Criar Conta',
-                            style: TextStyle(
-                              color: Color(0xFF0080FF),
-                              fontWeight: FontWeight.bold,
-                              decoration: TextDecoration.underline,
-                            ),
+                  ),
+                  const SizedBox(height: 40),
+                  CampoTexto(
+                    controller: _emailController,
+                    dica: 'E-mail',
+                    icone: Icons.email,
+                    tipoTeclado: TextInputType.emailAddress,
+                  ),
+                  const SizedBox(height: 20),
+                  CampoTexto(
+                    controller: _senhaController,
+                    dica: 'Senha',
+                    icone: Icons.lock,
+                    obscureText: true,
+                  ),
+                  const SizedBox(height: 20),
+                  if (_mensagemErro.isNotEmpty)
+                    MensagemErro(mensagem: _mensagemErro),
+                  const SizedBox(height: 30),
+                  BotaoPrincipal(
+                    texto: 'Entrar',
+                    aoClicar: _entrar,
+                  ),
+                  const SizedBox(height: 20),
+                  Row(
+                    mainAxisAlignment: MainAxisAlignment.center,
+                    children: [
+                      const Text(
+                        'Não tem conta? ',
+                        style: TextStyle(color: Colors.white),
+                      ),
+                      GestureDetector(
+                        onTap: () {
+                          Navigator.of(context).push(
+                            MaterialPageRoute(builder: (_) => const CadastroTela()),
+                          );
+                        },
+                        child: const Text(
+                          'Criar Conta',
+                          style: TextStyle(
+                            color: Colors.white,
+                            fontWeight: FontWeight.bold,
+                            decoration: TextDecoration.underline,
+                            decorationColor: Colors.white,
                           ),
                         ),
-                      ],
-                    ),
-                  ],
-                ),
+                      ),
+                    ],
+                  ),
+                ],
               ),
-            ],
+            ),
           ),
         ),
       ),

@@ -22,13 +22,13 @@ class CampoTexto extends StatelessWidget {
       controller: controller,
       obscureText: obscureText,
       keyboardType: tipoTeclado,
+
       decoration: InputDecoration(
+        hintStyle: TextStyle(color: Colors.grey.shade600),
         hintText: dica,
         filled: true,
         fillColor: Colors.white,
-        border: OutlineInputBorder(
-          borderRadius: BorderRadius.circular(10),
-        ),
+        border: OutlineInputBorder(borderRadius: BorderRadius.circular(10)),
         prefixIcon: Icon(icone),
       ),
     );
