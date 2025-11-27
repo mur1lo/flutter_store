@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import '../constantes/labels.dart';
 import 'login_tela.dart';
 import '../componentes/campo_texto.dart';
 import '../componentes/botao_principal.dart';
@@ -25,7 +26,7 @@ class _CadastroTelaState extends State<CadastroTela> {
         _senhaController.text.isEmpty ||
         _confirmarSenhaController.text.isEmpty) {
       setState(() {
-        _mensagemErro = 'Por favor, preencha todos os campos!';
+        _mensagemErro = Labels.preencherTodos;
         _mensagemSucesso = '';
       });
       return;
@@ -33,7 +34,7 @@ class _CadastroTelaState extends State<CadastroTela> {
 
     if (_senhaController.text != _confirmarSenhaController.text) {
       setState(() {
-        _mensagemErro = 'As senhas não conferem!';
+        _mensagemErro = Labels.senhasNaoConferem;
         _mensagemSucesso = '';
       });
       return;
@@ -41,7 +42,7 @@ class _CadastroTelaState extends State<CadastroTela> {
 
     if (_senhaController.text.length < 6) {
       setState(() {
-        _mensagemErro = 'A senha deve ter no mínimo 6 caracteres!';
+        _mensagemErro = Labels.senhaMinimo;
         _mensagemSucesso = '';
       });
       return;
@@ -49,7 +50,7 @@ class _CadastroTelaState extends State<CadastroTela> {
 
     setState(() {
       _mensagemErro = '';
-      _mensagemSucesso = 'Conta criada com sucesso! Voltando ao login...';
+      _mensagemSucesso = Labels.contaCriada;
     });
 
     Future.delayed(const Duration(seconds: 2), () {
@@ -85,7 +86,7 @@ class _CadastroTelaState extends State<CadastroTela> {
               ),
               const SizedBox(height: 20),
               const Text(
-                'Criar Conta',
+                Labels.criarConta,
                 style: TextStyle(
                   fontSize: 32,
                   fontWeight: FontWeight.bold,
@@ -99,27 +100,27 @@ class _CadastroTelaState extends State<CadastroTela> {
                   children: [
                     CampoTexto(
                       controller: _nomeController,
-                      dica: 'Nome Completo',
+                      dica: Labels.nomeCompleto,
                       icone: Icons.person,
                     ),
                     const SizedBox(height: 15),
                     CampoTexto(
                       controller: _emailController,
-                      dica: 'E-mail',
+                      dica: Labels.email,
                       icone: Icons.email,
                       tipoTeclado: TextInputType.emailAddress,
                     ),
                     const SizedBox(height: 15),
                     CampoTexto(
                       controller: _senhaController,
-                      dica: 'Senha',
+                      dica: Labels.senha,
                       icone: Icons.lock,
                       obscureText: true,
                     ),
                     const SizedBox(height: 15),
                     CampoTexto(
                       controller: _confirmarSenhaController,
-                      dica: 'Confirmar Senha',
+                      dica: Labels.confirmarSenha,
                       icone: Icons.lock,
                       obscureText: true,
                     ),
@@ -130,7 +131,7 @@ class _CadastroTelaState extends State<CadastroTela> {
                       MensagemSucesso(mensagem: _mensagemSucesso),
                     const SizedBox(height: 30),
                     BotaoPrincipal(
-                      texto: 'Criar Conta',
+                      texto: Labels.criarConta,
                       aoClicar: _criarConta,
                     ),
                     const SizedBox(height: 20),
@@ -139,7 +140,7 @@ class _CadastroTelaState extends State<CadastroTela> {
                         Navigator.of(context).pop();
                       },
                       child: const Text(
-                        'Voltar ao Login',
+                        Labels.voltarLogin,
                         style: TextStyle(
                           color: Colors.white,
                           fontWeight: FontWeight.bold,

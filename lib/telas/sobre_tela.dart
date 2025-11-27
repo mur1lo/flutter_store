@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import '../constantes/labels.dart';
 
 class SobreTela extends StatelessWidget {
   const SobreTela({super.key});
@@ -28,7 +29,7 @@ class SobreTela extends StatelessWidget {
                   ),
                   const SizedBox(height: 20),
                   const Text(
-                    'Flutter Store',
+                    Labels.appTitle,
                     style: TextStyle(
                       fontSize: 32,
                       fontWeight: FontWeight.bold,
@@ -37,7 +38,7 @@ class SobreTela extends StatelessWidget {
                   ),
                   const SizedBox(height: 10),
                   const Text(
-                    'Versão 1.0.0',
+                    Labels.versao,
                     style: TextStyle(
                       fontSize: 16,
                       color: Colors.white70,
@@ -58,7 +59,7 @@ class SobreTela extends StatelessWidget {
                   crossAxisAlignment: CrossAxisAlignment.start,
                   children: [
                     const Text(
-                      'Sobre',
+                      Labels.sobre,
                       style: TextStyle(
                         fontSize: 20,
                         fontWeight: FontWeight.bold,
@@ -67,7 +68,7 @@ class SobreTela extends StatelessWidget {
                     ),
                     const SizedBox(height: 15),
                     const Text(
-                      'App de e-commerce desenvolvido em Flutter para demonstrar boas práticas de desenvolvimento mobile. \nEquipe: Eliza, Giula, Murilo e Rafael',
+                      Labels.sobreApp,
                       style: TextStyle(
                         fontSize: 14,
                         height: 1.6,
@@ -76,7 +77,7 @@ class SobreTela extends StatelessWidget {
                     ),
                     const SizedBox(height: 25),
                     const Text(
-                      'Funcionalidades',
+                      Labels.funcionalidades,
                       style: TextStyle(
                         fontSize: 18,
                         fontWeight: FontWeight.bold,
@@ -84,10 +85,10 @@ class SobreTela extends StatelessWidget {
                       ),
                     ),
                     const SizedBox(height: 15),
-                    _itemFuncao('Login e Cadastro', Icons.login),
-                    _itemFuncao('8+ Produtos', Icons.shopping_bag),
-                    _itemFuncao('Sistema de Favoritos', Icons.favorite),
-                    _itemFuncao('Navegação Fluida', Icons.navigation),
+                    _itemFuncao(Labels.loginCadastro, Icons.login),
+                    _itemFuncao(Labels.produtosQuantidade, Icons.shopping_bag),
+                    _itemFuncao(Labels.sistemaFavoritos, Icons.favorite),
+                    _itemFuncao(Labels.navegacaoFluida, Icons.navigation),
                   ],
                 ),
               ),

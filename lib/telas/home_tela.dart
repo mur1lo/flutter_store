@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import '../constantes/labels.dart';
 import 'produtos_tela.dart';
 import 'favoritos_tela.dart';
 import 'sobre_tela.dart';
@@ -51,7 +52,7 @@ class _HomeTelaState extends State<HomeTela> {
                 ),
                 const SizedBox(height: 10),
                 const Text(
-                  'Aproveite as melhores ofertas',
+                  Labels.aproveiteOfertas,
                   style: TextStyle(fontSize: 16, color: Colors.white70),
                 ),
               ],
@@ -63,7 +64,7 @@ class _HomeTelaState extends State<HomeTela> {
               crossAxisAlignment: CrossAxisAlignment.start,
               children: [
                 const Text(
-                  'Categorias',
+                  Labels.categorias,
                   style: TextStyle(fontSize: 20, fontWeight: FontWeight.bold),
                 ),
                 const SizedBox(height: 15),
@@ -72,10 +73,10 @@ class _HomeTelaState extends State<HomeTela> {
                   child: ListView(
                     scrollDirection: Axis.horizontal,
                     children: [
-                      _cartaoCategoria('Eletrônicos', Icons.devices),
-                      _cartaoCategoria('Roupas', Icons.shopping_bag),
-                      _cartaoCategoria('Livros', Icons.book),
-                      _cartaoCategoria('Casa', Icons.home),
+                      _cartaoCategoria(Labels.eletronicos, Icons.devices),
+                      _cartaoCategoria(Labels.roupas, Icons.shopping_bag),
+                      _cartaoCategoria(Labels.livros, Icons.book),
+                      _cartaoCategoria(Labels.casa, Icons.home),
                     ],
                   ),
                 ),
@@ -99,14 +100,14 @@ class _HomeTelaState extends State<HomeTela> {
                           crossAxisAlignment: CrossAxisAlignment.start,
                           children: const [
                             Text(
-                              'Promoção',
+                              Labels.promocao,
                               style: TextStyle(
                                 fontWeight: FontWeight.bold,
                                 fontSize: 16,
                               ),
                             ),
                             Text(
-                              'Até 50% de desconto!',
+                              Labels.desconto,
                               style: TextStyle(fontSize: 12),
                             ),
                           ],
@@ -188,7 +189,7 @@ class _HomeTelaState extends State<HomeTela> {
       canPop: false,
       child: Scaffold(
         appBar: AppBar(
-          title: const Text('Flutter Store'),
+          title: const Text(Labels.appTitle),
           backgroundColor: const Color(0xFF0052CC),
           elevation: 0,
           automaticallyImplyLeading: false,
@@ -242,7 +243,7 @@ class _HomeTelaState extends State<HomeTela> {
               ),
               ListTile(
                 leading: const Icon(Icons.home),
-                title: const Text('Início'),
+                title: const Text(Labels.inicio),
                 onTap: () {
                   _aoAlternaTela(0);
                   Navigator.pop(context);
@@ -250,7 +251,7 @@ class _HomeTelaState extends State<HomeTela> {
               ),
               ListTile(
                 leading: const Icon(Icons.shopping_bag),
-                title: const Text('Produtos'),
+                title: const Text(Labels.produtos),
                 onTap: () {
                   _aoAlternaTela(1);
                   Navigator.pop(context);
@@ -258,7 +259,7 @@ class _HomeTelaState extends State<HomeTela> {
               ),
               ListTile(
                 leading: const Icon(Icons.favorite),
-                title: const Text('Favoritos'),
+                title: const Text(Labels.favoritos),
                 onTap: () {
                   _aoAlternaTela(2);
                   Navigator.pop(context);
@@ -266,7 +267,7 @@ class _HomeTelaState extends State<HomeTela> {
               ),
               ListTile(
                 leading: const Icon(Icons.info),
-                title: const Text('Sobre'),
+                title: const Text(Labels.sobre),
                 onTap: () {
                   _aoAlternaTela(3);
                   Navigator.pop(context);
@@ -275,7 +276,7 @@ class _HomeTelaState extends State<HomeTela> {
               const Divider(),
               ListTile(
                 leading: const Icon(Icons.logout),
-                title: const Text('Sair'),
+                title: const Text(Labels.sair),
                 onTap: () {
                   Navigator.of(context).pushAndRemoveUntil(
                     MaterialPageRoute(builder: (_) => const LoginTela()),
@@ -294,16 +295,16 @@ class _HomeTelaState extends State<HomeTela> {
           unselectedItemColor: Colors.grey,
           onTap: _aoAlternaTela,
           items: const [
-            BottomNavigationBarItem(icon: Icon(Icons.home), label: 'Início'),
+            BottomNavigationBarItem(icon: Icon(Icons.home), label: Labels.inicio),
             BottomNavigationBarItem(
               icon: Icon(Icons.shopping_bag),
-              label: 'Produtos',
+              label: Labels.produtos,
             ),
             BottomNavigationBarItem(
               icon: Icon(Icons.favorite),
-              label: 'Favoritos',
+              label: Labels.favoritos,
             ),
-            BottomNavigationBarItem(icon: Icon(Icons.info), label: 'Sobre'),
+            BottomNavigationBarItem(icon: Icon(Icons.info), label: Labels.sobre),
           ],
         ),
       ),

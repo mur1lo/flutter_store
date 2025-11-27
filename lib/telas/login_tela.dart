@@ -4,6 +4,7 @@ import 'home_tela.dart';
 import '../componentes/campo_texto.dart';
 import '../componentes/botao_principal.dart';
 import '../componentes/mensagens.dart';
+import '../constantes/labels.dart';
 
 class LoginTela extends StatefulWidget {
   const LoginTela({super.key});
@@ -20,14 +21,14 @@ class _LoginTelaState extends State<LoginTela> {
   void _entrar() {
     if (_emailController.text.isEmpty || _senhaController.text.isEmpty) {
       setState(() {
-        _mensagemErro = 'Por favor, preencha todos os campos!';
+        _mensagemErro = Labels.preencherTodos;
       });
       return;
     }
 
     if (!_emailController.text.contains('@')) {
       setState(() {
-        _mensagemErro = 'E-mail inválido!';
+        _mensagemErro = Labels.emailInvalido;
       });
       return;
     }
@@ -67,7 +68,7 @@ class _LoginTelaState extends State<LoginTela> {
                   ),
                   const SizedBox(height: 20),
                   const Text(
-                    'Flutter Store',
+                    Labels.appTitle,
                     style: TextStyle(
                       fontSize: 32,
                       fontWeight: FontWeight.bold,
@@ -77,14 +78,14 @@ class _LoginTelaState extends State<LoginTela> {
                   const SizedBox(height: 40),
                   CampoTexto(
                     controller: _emailController,
-                    dica: 'E-mail',
+                    dica: Labels.email,
                     icone: Icons.email,
                     tipoTeclado: TextInputType.emailAddress,
                   ),
                   const SizedBox(height: 20),
                   CampoTexto(
                     controller: _senhaController,
-                    dica: 'Senha',
+                    dica: Labels.senha,
                     icone: Icons.lock,
                     obscureText: true,
                   ),
@@ -93,7 +94,7 @@ class _LoginTelaState extends State<LoginTela> {
                     MensagemErro(mensagem: _mensagemErro),
                   const SizedBox(height: 30),
                   BotaoPrincipal(
-                    texto: 'Entrar',
+                    texto: Labels.entrar,
                     aoClicar: _entrar,
                   ),
                   const SizedBox(height: 20),
@@ -101,7 +102,7 @@ class _LoginTelaState extends State<LoginTela> {
                     mainAxisAlignment: MainAxisAlignment.center,
                     children: [
                       const Text(
-                        'Não tem conta? ',
+                        Labels.naoTemConta,
                         style: TextStyle(color: Colors.white),
                       ),
                       GestureDetector(
@@ -111,7 +112,7 @@ class _LoginTelaState extends State<LoginTela> {
                           );
                         },
                         child: const Text(
-                          'Criar Conta',
+                          Labels.criarConta,
                           style: TextStyle(
                             color: Colors.white,
                             fontWeight: FontWeight.bold,

@@ -3,6 +3,7 @@ import '../modelos/produto.dart';
 import '../servicos/produtos_servico.dart';
 import 'detalhe_produto_tela.dart';
 import '../componentes/cartao_produto.dart';
+import '../constantes/labels.dart';
 
 class FavoritosTela extends StatefulWidget {
   final List<int> idsDosFavoritos;
@@ -32,7 +33,7 @@ class _FavoritosTelaState extends State<FavoritosTela> {
             ),
             const SizedBox(height: 20),
             Text(
-              'Nenhum produto favorito',
+              Labels.nenhumFavorito,
               style: TextStyle(
                 fontSize: 18,
                 color: Colors.grey.shade600,
@@ -41,7 +42,7 @@ class _FavoritosTelaState extends State<FavoritosTela> {
             ),
             const SizedBox(height: 10),
             Text(
-              'Adicione produtos aos favoritos para vê-los aqui',
+              Labels.adicioneFavoritos,
               style: TextStyle(
                 fontSize: 14,
                 color: Colors.grey.shade500,

@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import '../modelos/produto.dart';
 import '../componentes/botao_principal.dart';
+import '../constantes/labels.dart';
 
 class DetalheProdutoTela extends StatefulWidget {
   final Produto produto;
@@ -31,7 +32,7 @@ class _DetalheProdutoTelaState extends State<DetalheProdutoTela> {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title: const Text('Detalhes do Produto'),
+        title: const Text(Labels.detalhesProduto),
         backgroundColor: const Color(0xFF0052CC),
         elevation: 0,
       ),
@@ -128,7 +129,7 @@ class _DetalheProdutoTelaState extends State<DetalheProdutoTela> {
                   ),
                   const SizedBox(height: 20),
                   const Text(
-                    'Descrição',
+                    Labels.descricao,
                     style: TextStyle(fontSize: 18, fontWeight: FontWeight.bold),
                   ),
                   const SizedBox(height: 10),
@@ -138,12 +139,12 @@ class _DetalheProdutoTelaState extends State<DetalheProdutoTela> {
                   ),
                   const SizedBox(height: 30),
                   BotaoPrincipal(
-                    texto: 'Adicionar ao Carrinho',
+                    texto: Labels.adicionarCarrinho,
                     aoClicar: () {
                       ScaffoldMessenger.of(context).showSnackBar(
                         SnackBar(
                           content: Text(
-                            '${widget.produto.nome} adicionado ao carrinho!',
+                            '${widget.produto.nome} ${Labels.produtoAdicionadoCarrinho}',
                           ),
                           duration: const Duration(seconds: 2),
                         ),
@@ -165,7 +166,7 @@ class _DetalheProdutoTelaState extends State<DetalheProdutoTela> {
                         ),
                       ),
                       child: const Text(
-                        'Voltar',
+                        Labels.voltar,
                         style: TextStyle(
                           fontSize: 16,
                           fontWeight: FontWeight.bold,

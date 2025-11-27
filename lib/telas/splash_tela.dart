@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import '../constantes/labels.dart';
 import 'login_tela.dart';
 
 class SplashTela extends StatefulWidget {
@@ -76,7 +77,7 @@ class _SplashTelaState extends State<SplashTela>
                       ),
                       const SizedBox(height: 20),
                       const Text(
-                        'Flutter Store',
+                        Labels.appTitle,
                         style: TextStyle(
                           fontSize: 40,
                           fontWeight: FontWeight.bold,
