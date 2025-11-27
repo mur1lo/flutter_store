@@ -81,13 +81,14 @@ flutter run
 - Sem autenticação real (apenas validação de formulário)
 - Interface responsiva e intuitiva
 
-## 👨‍💻 Desenvolvedor
+## 👨‍💻 Desenvolvedores
 
-**Murilo da Silva**
-**Giulia Monte Blanco Happke**
-**Rafael Theodoro de Moraes**
-**Eliza Carla Valdiero**
+- Murilo da Silva
+- Giulia Monte Blanco Happke
+- Rafael Theodoro de Moraes
+- Eliza Carla Valdiero
+- Rafael Theodoro de Moraes
+- Eliza Carla Valdiero
 
----
 
 **Versão:** 1.0.0 | **Data:** 19 de Novembro de 2025
