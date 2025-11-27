@@ -74,21 +74,7 @@ flutter run
 - **Material Design 3** - Design system
 - **Cores SENAI SC** - Azul (#0052CC) e Branco
 
-## 📊 Pontuação
-
-| Critério | Pontos |
-|----------|--------|
-| Login e Cadastro | 1.0 |
-| Navegação funcional | 1.0 |
-| Tela de Produtos | 2.0 |
-| Favoritos | 2.0 |
-| Widgets (ListView, Row, Column) | 1.0 |
-| Organização modular | 2.0 |
-| Design e criatividade | 1.0 |
-| **Splash Screen (Bônus)** | **+1.0** |
-| **TOTAL** | **11.0** |
-
-## 📝 Notas
+## 📝 
 
 - Dados simulados, sem persistência permanente
 - Sistema de favoritos funciona com `setState`
@@ -97,7 +83,10 @@ flutter run
 
 ## 👨‍💻 Desenvolvedor
 
-**Murilo da Silva** - Aluno SENAI
+**Murilo da Silva**
+**Giulia Monte Blanco Happke**
+**Rafael Theodoro de Moraes**
+**Eliza Carla Valdiero**
 
 ---
 
